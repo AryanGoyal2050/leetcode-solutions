@@ -47,16 +47,16 @@ public:
             vector <int> verti;
             for(auto q : p.second)
             {
-                multiset <int> :: iterator i;
-                for(i=q.second.begin(); i!=q.second.end(); i++)
-                {
-                    verti.push_back(*i);
-                }
-
-                // for(auto r : q.second)
+                // multiset <int> :: iterator i;
+                // for(i=q.second.begin(); i!=q.second.end(); i++)
                 // {
-                //     verti.push_back(*r);
+                //     verti.push_back(*i);
                 // }
+
+                for(auto r : q.second)
+                {
+                    verti.push_back(r);
+                }
             }
             v.push_back(verti);
         }
