@@ -1,15 +1,4 @@
 class Solution {
-private:
-    
-    bool comp(vector <int> a, vector <int> b)
-    {
-        if(a[0] < b[0]) return true;
-        else if(a[0] == b[0])
-        {
-            return (a[1] > b[1]);
-        }
-        return false;
-    }
     
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
