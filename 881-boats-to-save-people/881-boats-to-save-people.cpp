@@ -10,7 +10,6 @@ public:
         int p2 = n-1;
         
         int ans = 0;
-        int curr = 0;
         
         while(p1 <= p2)
         {
@@ -20,16 +19,9 @@ public:
                 break;
             }
             
-            curr = 0;
-            curr += people[p2];
+            if(people[p1]+people[p2] <= limit) p1++;
             p2--;
-            if(curr+people[p1] <= limit)
-            {
-                curr += people[p1];
-                p1++;
-            }
             ans++;
-            curr = 0;
         }
         
         return ans;
