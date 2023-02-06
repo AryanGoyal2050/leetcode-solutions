@@ -47,15 +47,14 @@ class Solution
     
     void func(vector <int> & ans)
     {
-        if(q.size() == 0) return ;
-        
-        Node* x = q.front();
-        q.pop();
-        if(x->left) q.push(x->left);
-        if(x->right) q.push(x->right);
-        ans.push_back(x->data);
-        
-        func(ans);
+        while(q.size())
+        {
+            Node* x = q.front();
+            q.pop();
+            if(x->left) q.push(x->left);
+            if(x->right) q.push(x->right);
+            ans.push_back(x->data);
+        }
     }
     
     vector<int> levelOrder(Node* node)
