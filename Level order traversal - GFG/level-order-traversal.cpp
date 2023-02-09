@@ -47,13 +47,14 @@ class Solution
     
     void func()
     {
-        if(q.empty()) return ;
-        Node* x = q.front();
-        q.pop();
-        ans.push_back(x->data);
-        if(x->left) q.push(x->left);
-        if(x->right) q.push(x->right);
-        func();
+        while(!q.empty())
+        {
+            Node* x = q.front();
+            q.pop();
+            ans.push_back(x->data);
+            if(x->left) q.push(x->left);
+            if(x->right) q.push(x->right);
+        }
     }
     
     //Function to return the level order traversal of a tree.
