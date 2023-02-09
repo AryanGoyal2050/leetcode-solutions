@@ -41,31 +41,27 @@ struct Node
 class Solution
 {
     public:
-    //Function to return the level order traversal of a tree.
     
     queue <Node*> q;
+    vector <int> ans;
     
-    void func(vector <int> & ans)
+    void func()
     {
-        while(q.size())
-        {
-            Node* x = q.front();
-            q.pop();
-            if(x->left) q.push(x->left);
-            if(x->right) q.push(x->right);
-            ans.push_back(x->data);
-        }
+        if(q.empty()) return ;
+        Node* x = q.front();
+        q.pop();
+        ans.push_back(x->data);
+        if(x->left) q.push(x->left);
+        if(x->right) q.push(x->right);
+        func();
     }
     
+    //Function to return the level order traversal of a tree.
     vector<int> levelOrder(Node* node)
     {
       //Your code here
-      vector <int> ans;
-      
       q.push(node);
-      
-      func(ans);
-      
+      func();
       return ans;
     }
 };
