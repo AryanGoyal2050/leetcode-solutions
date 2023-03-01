@@ -38,10 +38,10 @@ class Solution
                 int newy = y+dy[i];
                 if(newx > 0 and newy > 0 and newx <= N and newy <= N){
                       if(!vis[newx][newy]) {
-                          q.push({{newx, newy}, mov+1}),vis[x][y]++;
+                          q.push({{newx, newy}, mov+1});
+                          vis[x][y]++;
                       }
                 }
-              
             }
         }
         
