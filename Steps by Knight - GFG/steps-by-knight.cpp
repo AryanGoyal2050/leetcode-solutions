@@ -28,7 +28,7 @@ class Solution
             int y = temp.first.second;
             int mov = temp.second;
             if(vis[x][y])continue;
-            vis[x][y]++;
+            
             
             if(x == TargetPos[0] and y == TargetPos[1])  return mov;
             
@@ -37,7 +37,9 @@ class Solution
                 int newx = x+dx[i];
                 int newy = y+dy[i];
                 if(newx > 0 and newy > 0 and newx <= N and newy <= N){
-                      if(!vis[newx][newy]) q.push({{newx, newy}, mov+1});
+                      if(!vis[newx][newy]) {
+                          q.push({{newx, newy}, mov+1}),vis[x][y]++;
+                      }
                 }
               
             }
